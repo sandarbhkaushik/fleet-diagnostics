@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.angular/
+*.db
+.env
+coverage/
+.idea/
+.vscode/
+*.tsbuildinfo

@@ -1,0 +1,24 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+}
+
+// Severity badges
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.badge-error { background: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+.badge-warn  { background: #fffbeb; color: #d97706; border: 1px solid #fde68a; }
+.badge-info  { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
