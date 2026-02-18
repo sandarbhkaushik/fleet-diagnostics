@@ -11,7 +11,7 @@ async function bootstrap() {
   app.useBodyParser('text', { type: 'text/plain' });
 
   app.setGlobalPrefix('api');
-  app.enableCors({ origin: 'http://localhost:4200' });
+  app.enableCors();
   app.useGlobalPipes(
     new ValidationPipe({ transform: true, whitelist: true }),
   );
