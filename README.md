@@ -4,31 +4,56 @@ A fullstack vehicle fleet diagnostics console that ingests structured diagnostic
 
 ## Prerequisites
 
-- Node.js 20+
-- npm 9+
+Only **Node.js** and **npm** are required. All other tools (Angular CLI, NestJS CLI, TypeORM, etc.) are project dependencies and install automatically via `npm install`.
+
+| Tool | Version | Install |
+|------|---------|---------|
+| **Node.js** | 20+ (developed with v24) | [nodejs.org](https://nodejs.org/) |
+| **npm** | 9+ (comes with Node.js) | Included with Node.js |
+| **Docker** *(optional)* | 20+ | [docker.com](https://www.docker.com/) — only needed if running via containers |
+
+> No global installs needed. `@angular/cli` and `@nestjs/cli` run via `npx` from local `node_modules`.
 
 ## Quick Start
 
-### Backend
+### 1. Clone and install
+
+```bash
+git clone https://github.com/sandarbhkaushik/fleet-diagnostics.git
+cd fleet-diagnostics
+
+# Install backend dependencies
+cd backend
+npm install
+
+# Install frontend dependencies
+cd ../frontend
+npm install
+cd ..
+```
+
+### 2. Start Backend
 
 ```bash
 cd backend
-npm install
-npm run seed        # Seeds ~500 diagnostic events
+npm run seed        # Seeds ~500 diagnostic events into SQLite
 npm run start:dev   # Starts on http://localhost:3000
 ```
 
-Swagger UI: http://localhost:3000/api/docs
+- Swagger UI: http://localhost:3000/api/docs
+- Test: `curl http://localhost:3000/api/events?vehicle=1000&level=ERROR`
 
-### Frontend
+### 3. Start Frontend (in a separate terminal)
 
 ```bash
 cd frontend
-npm install
 npx ng serve        # Starts on http://localhost:4200
 ```
 
-### Docker
+- Dashboard: http://localhost:4200/dashboard
+- Event Explorer: http://localhost:4200/events
+
+### Alternative: Docker
 
 ```bash
 docker-compose up --build
